@@ -1,0 +1,27 @@
+<?php
+
+/**
+* @file
+* myblock.module
+*/
+
+function myblock_block_info() {
+  $blocks['myblock'] = array(
+    'info' => t('My Custom Block'),
+  );
+
+  return $blocks;
+}
+
+function myblock_block_view($delta = '') {
+  // This example is adapted from node.module.
+  $block = array();
+
+  switch ($delta) {
+    case 'myblock':
+      $block['subject'] = t('hello');
+      $block['content'] = "custom block";
+      break;
+  }
+  return $block;
+}

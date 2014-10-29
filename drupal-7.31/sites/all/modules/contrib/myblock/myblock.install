@@ -1,0 +1,36 @@
+<?php
+
+function myblock_update_7001() {
+  $body = '
+<div style="text-align:center">
+<p>These aren\'t the droids you\'re looking for.</p>
+ 
+<p>Perhaps one of these will serve your needs:</p>
+ 
+<a href="/">Home Page</a><br />
+<a href="/contact">Contact</a>
+</div>
+';
+ 
+  $node = (object) array(
+    'type' => 'page',
+    'language' => 'und',
+    'title' => 'Jedi Mind Trick',
+    'body' => array(
+      'und' => array(
+        0 => array(
+          'value' => $body,
+          'format' => 'filtered_html',
+        ),
+      ),
+    ),
+    'path' => array(
+      'alias' => '404',
+      'pathauto' => 0,
+    ),
+  );
+ 
+  node_save($node);
+ 
+  variable_set('site_404', '404');
+}

@@ -1,0 +1,12 @@
+name = Override Theme
+description = A demonstration of a theme override
+core = 7.x
+
+stylesheets[all][] = CSS/style.css
+stylesheets[all][] = CSS/bootstrap.css
+
+regions[user_menu] = User Menu
+regions[main_menu] = Main Menu
+regions[content] = Content
+regions[sidebar_second] = Right sidebar
+region[top_nav] = Top Nav
